@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Educational Information</h2>
+<div mat-dialog-content>
+    <div class="form-group">
+        <label>Degree</label>
+        <select matInput [(ngModel)]="educationData.educationInfo.Degree" class="form-control">
+        <option>Select Degree</option>
+        <option *ngFor="let d of degrees" value="{{d}}">{{d}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label>Specialization</label>
+        <select matInput [(ngModel)]="educationData.educationInfo.Specialization" class="form-control">
+        <option>Select Specialization</option>
+        <option *ngFor="let s of specializations" value="{{s}}">{{s}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label>College or School</label>
+        <input matInput type="text" [(ngModel)]="educationData.educationInfo.CollegeOrSchool" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Year of Admission</label>
+        <select matInput [(ngModel)]="educationData.educationInfo.YearOfAdmission" class="form-control">
+        <option>Select Admission Year</option>
+        <option *ngFor="let ya of yearOfAdmission" value="{{ya}}">{{ya}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label>Year of Passing</label>
+        <select matInput [(ngModel)]="educationData.educationInfo.YearOfPassing" class="form-control">
+        <option>Select Passing Year</option>
+        <option *ngFor="let yp of yearOfPassing" value="{{yp}}">{{yp}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label>Grade</label>
+        <select matInput [(ngModel)]="educationData.educationInfo.Grade" class="form-control">
+        <option>Select Grade</option>
+        <option *ngFor="let g of grades" value="{{g}}">{{g}}</option>
+      </select>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="educationData.educationInfo" (click)="cancel()">Cancel</button>
+    <button mat-button [mat-dialog-close]="educationData.educationInfo" cdkFocusInitial>Ok</button>
+</div>

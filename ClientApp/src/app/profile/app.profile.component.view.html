@@ -1,0 +1,83 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <td>
+      <label>First Name</label>
+      <input type="text" class="form-control" [(ngModel)]="profile.FirstName">
+    </td>
+    <td>
+      <label>Middle Name</label>
+      <input type="text" class="form-control" [(ngModel)]="profile.MiddleName">
+    </td>
+    <td>
+      <label>Last Name</label>
+      <input type="text" class="form-control" [(ngModel)]="profile.LastName">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>Gender</label>
+      <select class="form-control" [(ngModel)]="profile.Gender">
+        <option>Select Gender</option>
+        <option *ngFor="let g of genders" value="{{g}}">{{g}}</option>
+      </select>
+    </td>
+    <td>
+      <label>Contact Number</label>
+      <input type="text" class="form-control" [(ngModel)]="profile.ContactNumber">
+    </td>
+    <td>
+      <label>Marital Status</label>
+      <select class="form-control" [(ngModel)]="profile.MaritalStatus">
+        <option>Select Marital Status</option>
+        <option *ngFor="let m of maritalStatusInfo" value="{{m}}">{{m}}</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <label>Date of Birth</label>
+      <input type="date" class="form-control" [(ngModel)]="profile.DateOfBirth">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <h3>Education Details</h3>
+      <input type="button" class="btn btn-danger" (click)="openEducationDialog()" value="Click to Add Education">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td *ngFor="let h of educationTableHeaders">{{h}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of educationDetails">
+            <td *ngFor="let h of educationTableHeaders">{{e[h]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <h3>Experience Details</h3>
+      <input type="button" class="btn btn-warning" value="Click to Experience Details" (click)="openWorkExperienceDialog()">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <td *ngFor="let h of workexperienceTableHeaders">{{h}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of workexperienceDetails">
+            <td *ngFor="let h of workexperienceTableHeaders">{{e[h]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <input type="button" (click)="saveProfile()" class="btn btn-success" value="Save">
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Work Experience Details</h2>
+<div mat-dialog-content>
+    <div class="form-group">
+        <label>Company Name</label>
+        <input matInput type="text" [(ngModel)]="workexperienceData.experienceInfo.CompanyName" class="form-control">
+
+    </div>
+    <div class="form-group">
+        <label>Designation</label>
+        <input matInput type="text" [(ngModel)]="workexperienceData.experienceInfo.Designation" class="form-control">
+
+    </div>
+    <div class="form-group">
+        <label>Date of Join</label>
+        <input matInput type="date" [(ngModel)]="workexperienceData.experienceInfo.DateOfJoin" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Date of Leaving</label>
+        <input matInput type="date" [(ngModel)]="workexperienceData.experienceInfo.DateOfLeaving" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Years of Experience</label>
+      <select matInput [(ngModel)]="workexperienceData.experienceInfo.YearsOfExperience" class="form-control">
+    <option>Select Experience</option>
+    <option *ngFor="let e of experiences" value="{{e}}">{{e}}</option>
+  </select>
+
+    </div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="workexperienceData.experienceInfo" (click)="cancel()">Cancel</button>
+    <button mat-button [mat-dialog-close]="workexperienceData.experienceInfo" cdkFocusInitial>Ok</button>
+</div>
